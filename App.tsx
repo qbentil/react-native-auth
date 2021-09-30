@@ -23,7 +23,7 @@ export default class App extends React.Component{
   render (){
     return(
         <View style={styles.container}>
-        <Text>Day2: Learning Props and States</Text>
+        <Text>Day3: Conditional Rendering</Text>
         
         <Text style ={styles.screen}>{this.state.number}</Text>
         <TouchableOpacity style = {styles.button} onPress={() => this.add()}>
