@@ -23,10 +23,10 @@ export default class App extends React.Component{
   render (){
     return(
         <View style={styles.container}>
-        <Text>Learning Props and States</Text>
+        <Text>Day2: Learning Props and States</Text>
         
         <Text style ={styles.screen}>{this.state.number}</Text>
-        <TouchableOpacity style = {styles.button} onPress={this.add}>
+        <TouchableOpacity style = {styles.button} onPress={() => this.add()}>
           <Text style = {{fontSize: 20}}>Increase</Text>
         </TouchableOpacity>
 
