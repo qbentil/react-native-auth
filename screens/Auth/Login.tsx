@@ -5,9 +5,12 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class Login extends  React.Component {
     render() {
+        // this.props.navigation.setOptions({
+        //     headerTitle: "Hello1 World!"
+        // })
         return (
             <View style = {styles.container}>
-                <Text> Login Screen </Text>
+                <Text> Login Screen</Text>
                 <TouchableOpacity style = {styles.button} onPress = {() => this.props.navigation.navigate('Signup')}>
                   <Text style = {{color: "#000"}}>ALready have account? Login</Text>  
                 </TouchableOpacity>
