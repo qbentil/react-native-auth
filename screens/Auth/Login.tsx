@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 
-export default class Signup extends  React.Component {
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
+export default class Login extends  React.Component {
     render() {
         return (
             <View style = {styles.container}>
-                <Text>Day5: React Navigations</Text>
-                <Text style = {{marginVertical: 10}}> Signup Screen</Text>
-                <TouchableOpacity style = {styles.button} onPress = {() => this.props.navigation.navigate('Login')}>
-                  <Text style = {{color: "#000"}}>Already have account? Login</Text>  
+                <Text> Login Screen </Text>
+                <TouchableOpacity style = {styles.button} onPress = {() => this.props.navigation.navigate('Signup')}>
+                  <Text style = {{color: "#000"}}>ALready have account? Login</Text>  
                 </TouchableOpacity>
             </View>
         )
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#ccc',
       alignItems: 'center',
       justifyContent: 'center',
-    },
+    },    
     button: {
         backgroundColor: "#fff",
         margin: 10,
