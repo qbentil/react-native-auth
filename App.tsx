@@ -1,17 +1,25 @@
-import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { applyMiddleware, createStore } from 'redux';
 
-import { Component } from 'react';
+import { Provider } from 'react-redux';
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
+import {StyleSheet} from 'react-native';
 import SwitchNavigator from './navigation/loginNavigator'
+import reducer from './reducers/index'
+import thunkMiddleware from 'redux-thunk'
+
+const middleware = applyMiddleware(thunkMiddleware);
+const store = createStore(reducer, middleware);
 
 export default class App extends React.Component{
-  
+
   render (){
     return(
-      <SwitchNavigator /> 
+      <Provider store = {store}>
+        <SwitchNavigator /> 
+      </Provider>
     )
   };
+  
 }
 
 const styles = StyleSheet.create({
