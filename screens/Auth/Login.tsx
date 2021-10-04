@@ -1,19 +1,36 @@
+import { Dimensions, StyleSheet, Text, View } from 'react-native'
 import React, { Component } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 
-import { TouchableOpacity } from 'react-native-gesture-handler';
+// Define screen dimensions
 
+const SCREENHEIGHT = Dimensions.get("window").height;
+const SCREENWIDTH = Dimensions.get("window").width;
 export default class Login extends  React.Component {
     render() {
-        // this.props.navigation.setOptions({
-        //     headerTitle: "Hello1 World!"
-        // })
+
         return (
             <View style = {styles.container}>
-                <Text> Login Screen</Text>
-                <TouchableOpacity style = {styles.button} onPress = {() => this.props.navigation.navigate('Signup')}>
-                  <Text style = {{color: "#000"}}>ALready have account? Login</Text>  
-                </TouchableOpacity>
+                <Text style = {{fontSize: 30, fontWeight: 'bold'}}>INSTA CLONE</Text>
+                <View style = {{top: 100}}>
+                    {/* Label */}
+                    <View style = {{width: SCREENWIDTH*0.9, marginTop: 10}}>
+                        <Text style = {{left: 15}}>Username:</Text>
+                    </View>
+                    <TextInput style = {styles.input} 
+                    placeholderTextColor = {"grey"}
+                    placeholder = {"@qbentil"}
+                    />
+                    
+                    {/* Label */}
+                    <View style = {{width: SCREENWIDTH*0.9, marginTop: 10}}>
+                        <Text style = {{left: 15}}>Password:</Text>
+                    </View>
+                    <TextInput style = {styles.input} 
+                    placeholderTextColor = {"grey"}
+                    placeholder = {"********"}
+                    />
+                </View>
             </View>
         )
     }
@@ -23,15 +40,20 @@ const styles = StyleSheet.create({
     
     container: {
       flex: 1,
-      backgroundColor: '#ccc',
+      backgroundColor: 'white',
       alignItems: 'center',
-      justifyContent: 'center',
+    //   justifyContent: 'center',
     },    
-    button: {
-        backgroundColor: "#fff",
-        margin: 10,
-        padding: 10,
-        borderRadius: 5
+    input: {
+        height: 50,
+        width: SCREENWIDTH*0.9,
+        color: "black",
+        paddingHorizontal: 20,
+        // margin: 0,
+        borderRadius: 5,
+        borderColor: 'grey',
+        borderWidth: 1,
+        
     }
   
   });
