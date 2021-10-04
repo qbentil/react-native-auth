@@ -2,22 +2,23 @@
 
 import * as React from 'react';
 
-import AppLoading from 'expo';
 import Login from '../screens/Auth/Login';
 import { NavigationContainer } from '@react-navigation/native';
 import Signup from '../screens/Auth/Signup';
+import { View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useFonts } from '@use-expo/font';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   let [fontLoaded] = useFonts({
-    
+    'Lobster-Regular': require("../assets/fonts/Lobster-Regular.ttf")
   });
   
 
-  if(fontLoaded){
-    return <AppLoading />
+  if(!fontLoaded){
+    return <View />
   }else{
     return (
       <NavigationContainer>
