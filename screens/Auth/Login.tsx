@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet, Text, View } from 'react-native'
 import React, { Component } from 'react'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
+// import PasswordInputText from 'react-native-hide-show-password-input';
 
 // Define screen dimensions
 
@@ -31,7 +32,6 @@ export default class Login extends  React.Component {
                     <TextInput 
                         style = {styles.input} 
                         placeholderTextColor = {"grey"}
-                        // placeholder = {"********"}
                         secureTextEntry = {true}
                     />
                 </View>
