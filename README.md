@@ -8,3 +8,5 @@ Implementing Navigation to different screens., Stack Screen Header Options, etc.
 
 **Day7: Setting Up Redux**
 Redux allows to have a state for the whole up which can be accessible from every part of the App.
+
+**Day8: Designing Login Page**
