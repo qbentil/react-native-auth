@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 
 export default function App() {
   let [fontLoaded] = useFonts({
-    'Lobster-Regular': require("../assets/fonts/Lobster-Regular.ttf")
+    'Login-Font': require("../assets/fonts/Lobster-Regular.ttf")
   });
   
 

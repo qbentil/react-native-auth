@@ -12,7 +12,7 @@ export default class Login extends  React.Component {
 
         return (
             <View style = {styles.container}>
-                <Text style = {{marginVertical: 50, fontSize: 35, fontWeight: 'bold', fontFamily: 'Lobster-Regular'}}>Bentilzone</Text>
+                <Text style = {{marginVertical: 50, fontSize: 35, fontWeight: 'bold', fontFamily: 'Login-Font'}}>Bentilzone</Text>
                 <View style = {{top: 60}}>
                     {/* Label */}
                     <View style = {{width: SCREENWIDTH*0.9, marginTop: 10}} >
