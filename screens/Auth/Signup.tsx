@@ -3,13 +3,19 @@ import React, { Component } from 'react'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { updateUsername, updatePassword } from '../../actions/user'
+import { updateUsername, updatePassword, updateEmail } from '../../actions/user'
 
 
 const SCREENHEIGHT = Dimensions.get("window").height;
 const SCREENWIDTH = Dimensions.get("window").width;
 
 class Signup extends  React.Component {
+    state = {
+        repeat: ''
+    }
+    onSignupPress = () =>{
+        alert("Working")
+    }
     render()
     {
         return (
@@ -27,6 +33,8 @@ class Signup extends  React.Component {
                         placeholder = {"example@domain.com"}
                         keyboardType = {'email-address'}
                         autoFocus = {false}
+                        onChangeText={input=>this.props.updateEmail(input)}
+                        value={this.props.user.email}
                     />
 
                     <View style = {{width: SCREENWIDTH*0.9, marginTop: 10}}>
@@ -36,6 +44,8 @@ class Signup extends  React.Component {
                         style = {styles.input} 
                         placeholderTextColor = {"grey"}
                         placeholder = {"@qbentil"}
+                        onChangeText={input=>this.props.updateUsername(input)}
+                        value={this.props.user.username}
                     />
                     
                     {/* Label */}
@@ -45,8 +55,9 @@ class Signup extends  React.Component {
                     <TextInput 
                         style = {styles.input} 
                         placeholderTextColor = {"grey"}
-                        // placeholder = {"********"}
                         secureTextEntry = {true}
+                        onChangeText={input=>this.props.updatePassword(input)}
+                        value={this.props.user.password}
                     />
 
                     <View style = {{width: SCREENWIDTH*0.9, marginTop: 10}}>
@@ -55,14 +66,16 @@ class Signup extends  React.Component {
                     <TextInput 
                         style = {styles.input} 
                         placeholderTextColor = {"grey"}
-                        // placeholder = {"********"}
                         secureTextEntry = {true}
+                        onChangeText={input=>this.setState({repeat: input})}
+                        value={this.state.repeat}
+                        
                     />
                 </View>
                 {/* Button */}
                 <View style = {{width: SCREENHEIGHT, justifyContent: 'center', alignItems: 'center', marginVertical: 120 }}>
-                    <TouchableOpacity style = {styles.button}>
-                        <Text style = {{color: 'white', fontWeight: 'bold', fontSize: 20 }}>LOGIN</Text>
+                    <TouchableOpacity style = {styles.button} onPress = {() => this.onSignupPress()}>
+                        <Text style = {{color: 'white', fontWeight: 'bold', fontSize: 20 }}>SIGNUP</Text>
                     </TouchableOpacity>
                     
                     {/* Sign Up page link */}
@@ -129,6 +142,6 @@ const mapStateToProps = (state) =>{
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({updateUsername, updatePassword}, dispatch);
+    return bindActionCreators({updateUsername, updatePassword, updateEmail}, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Signup)

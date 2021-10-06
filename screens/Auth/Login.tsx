@@ -28,7 +28,7 @@ class Login extends  React.Component {
                         placeholder = {"@qbentil"}
                         autoFocus = {false}
                         onChangeText={input=>this.props.updateUsername(input)}
-                        value={this.props.user.email}
+                        value={this.props.user.username}
                     />
                     
                     {/* Label */}
