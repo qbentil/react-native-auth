@@ -1,17 +1,21 @@
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, StyleSheet, Text, View, Image } from 'react-native'
 import React, { Component } from 'react'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
-// import PasswordInputText from 'react-native-hide-show-password-input';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateUsername, updatePassword } from '../../actions/user'
+
 
 // Define screen dimensions
 
 const SCREENHEIGHT = Dimensions.get("window").height;
 const SCREENWIDTH = Dimensions.get("window").width;
-export default class Login extends  React.Component {
+class Login extends  React.Component {
     render() {
 
         return (
             <View style = {styles.container}>
+                <Image source = {require("../../assets/backgrounds/back.jpg")} style = {styles.bg} />
                 <Text style = {{marginVertical: 50, fontSize: 35, fontWeight: 'bold', fontFamily: 'Login-Font'}}>Bentilzone</Text>
                 <View style = {{top: 60}}>
                     {/* Label */}
@@ -22,7 +26,9 @@ export default class Login extends  React.Component {
                         style = {styles.input} 
                         placeholderTextColor = {"grey"}
                         placeholder = {"@qbentil"}
-                        autoFocus = {true}
+                        autoFocus = {false}
+                        onChangeText={input=>this.props.updateUsername(input)}
+                        value={this.props.user.email}
                     />
                     
                     {/* Label */}
@@ -33,6 +39,8 @@ export default class Login extends  React.Component {
                         style = {styles.input} 
                         placeholderTextColor = {"grey"}
                         secureTextEntry = {true}
+                        onChangeText={input=>this.props.updatePassword(input)}
+                        value={this.props.user.password}
                     />
                 </View>
                 {/* Button */}
@@ -86,6 +94,26 @@ const styles = StyleSheet.create({
         backgroundColor: '#0095f6',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    bg: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        zIndex: -1,
+        width: SCREENWIDTH,
+        height: SCREENHEIGHT+50
     }
   
   });
+
+//   Implementing Redux
+const mapStateToProps = (state) =>{
+    return {
+        user: state.user
+    };
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({updateUsername, updatePassword}, dispatch);
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
