@@ -21,8 +21,8 @@ class Signup extends  React.Component {
         return (
             <View style = {styles.container}>
                 <Image source = {require("../../assets/backgrounds/back.jpg")} style = {styles.bg} />
-                <Text style = {{marginVertical: 50, fontSize: 35, fontWeight: 'bold', fontFamily: 'Login-Font'}}>Bentilzone</Text>
-                <View style = {{top: 40}}>
+                <Text style = {{top: 80, fontSize: 35, fontWeight: 'bold', fontFamily: 'Login-Font', color:'#0095f6'}}>Bentilzone</Text>
+                <View style = {{top: 100}}>
                     {/* Label */}
                     <View style = {{width: SCREENWIDTH*0.9, marginTop: 10}}>
                         <Text style = {{left: 15}}>Email:</Text>

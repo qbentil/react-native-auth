@@ -16,7 +16,7 @@ class Login extends  React.Component {
         return (
             <View style = {styles.container}>
                 <Image source = {require("../../assets/backgrounds/back.jpg")} style = {styles.bg} />
-                <Text style = {{marginVertical: 50, fontSize: 35, fontWeight: 'bold', fontFamily: 'Login-Font'}}>Bentilzone</Text>
+                <Text style = {{marginBottom: 50, marginTop: 90, fontSize: 35, fontWeight: 'bold', fontFamily: 'Login-Font', color:'#0095f6'}}>Bentilzone</Text>
                 <View style = {{top: 60}}>
                     {/* Label */}
                     <View style = {{width: SCREENWIDTH*0.9, marginTop: 10}} >
