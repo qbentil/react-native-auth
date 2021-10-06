@@ -12,3 +12,9 @@ Redux allows to have a state for the whole up which can be accessible from every
 
 **Day8: Designing Login Page**
 Whats New? I Learnt to Load external fonts from Expo Use Fonts. @use-expo/font
+
+**Day9: Implementing Reducers and Designing Signup Page**
+Whats New? I Learnt to Create reducers from scratch to to load functions and state variables acros other pages. @ureact-redux
+I also worked with images on Auth pages.
+
+## CURRENT APP STATE
