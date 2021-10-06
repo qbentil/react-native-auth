@@ -1,16 +1,20 @@
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, StyleSheet, Text, View, Image } from 'react-native'
 import React, { Component } from 'react'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { updateUsername, updatePassword } from '../../actions/user'
 
 
 const SCREENHEIGHT = Dimensions.get("window").height;
 const SCREENWIDTH = Dimensions.get("window").width;
 
-export default class Signup extends  React.Component {
+class Signup extends  React.Component {
     render()
     {
         return (
             <View style = {styles.container}>
+                <Image source = {require("../../assets/backgrounds/back.jpg")} style = {styles.bg} />
                 <Text style = {{marginVertical: 50, fontSize: 35, fontWeight: 'bold', fontFamily: 'Login-Font'}}>Bentilzone</Text>
                 <View style = {{top: 40}}>
                     {/* Label */}
@@ -22,7 +26,7 @@ export default class Signup extends  React.Component {
                         placeholderTextColor = {"grey"}
                         placeholder = {"example@domain.com"}
                         keyboardType = {'email-address'}
-                        autoFocus = {true}
+                        autoFocus = {false}
                     />
 
                     <View style = {{width: SCREENWIDTH*0.9, marginTop: 10}}>
@@ -105,6 +109,26 @@ const styles = StyleSheet.create({
           backgroundColor: '#0095f6',
           alignItems: 'center',
           justifyContent: 'center',
+      },
+      bg: {
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'absolute',
+          zIndex: -1,
+          width: SCREENWIDTH,
+          height: SCREENHEIGHT+50
       }
   
   });
+
+  //   Implementing Redux
+const mapStateToProps = (state) =>{
+    return {
+        user: state.user
+    };
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({updateUsername, updatePassword}, dispatch);
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Signup)
