@@ -18,3 +18,7 @@ Whats New? I Learnt to Create reducers from scratch to to load functions and sta
 I also worked with images on Auth pages.
 
 ## CURRENT APP STATE
+
+
+https://user-images.githubusercontent.com/55560024/136123378-2e813bd0-9342-4108-81ef-6e0ef1edfc3c.mp4
+
