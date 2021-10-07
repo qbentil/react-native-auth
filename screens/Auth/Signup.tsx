@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { updateUsername, updatePassword, updateEmail } from '../../actions/user'
+import { updateUsername, updatePassword, updateEmail, signup } from '../../actions/user'
 
 
 const SCREENHEIGHT = Dimensions.get("window").height;
@@ -14,7 +14,12 @@ class Signup extends  React.Component {
         repeat: ''
     }
     onSignupPress = () =>{
-        alert("Working")
+        if(this.props.user.password == this.state.repeat && this.props.username !== '')
+        {
+          this.props.signup();
+        }else{
+          alert('Fill out fields correctly!')
+        }
     }
     render()
     {
