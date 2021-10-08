@@ -32,7 +32,7 @@ export const signup = () => {
 					likes: 0,
 					photo: '',
 				}
-				db.collection('users').doc(response.user.uid).set(user);
+				await db.collection('users').doc(response.user.uid).set(user);
 				dispatch({type: 'LOGIN', playload: user})
 				alert("Signup was successful!");
 			}
