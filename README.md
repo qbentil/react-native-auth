@@ -22,4 +22,4 @@ I also worked with images on Auth pages.
 
 https://user-images.githubusercontent.com/55560024/136123378-2e813bd0-9342-4108-81ef-6e0ef1edfc3c.mp4
 
-**Day10: Kinda busy so I had to pause for today🥺
+**Day10: Kinda busy so I had to pause for today🥺**
